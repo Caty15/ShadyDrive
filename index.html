@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shady Server</title>
+</head>
+<body>
+    <p>welcome to caty1s shady download server</p>
+    <p>todays download menu:</p>
+    <a href="./Caty1s_PvPack_v1.2.1.zip" download class="download-btn">Caty1s TexturePack</a>
+    <a href="./ltfinalepreview.mp4" download class="download-btn">Like this finale video</a>
+    <p>upload to database:</p>
+    <input type='file' id="fileuploader"/>
+    <p id="feedback"></p>
+
+    <script type="text/javascript">
+        const realFileBtn = document.getElementById("fileuploader");
+        
+        realFileBtn.addEventListener('change', (event) => {
+            const files = event.target.files;
+            console.log('files', files);
+
+            const feedback = document.getElementById('feedback');
+            const msg = `File ${files[0].name} uploaded successfully!`;
+            feedback.innerHTML = msg;
+        });
+    </script>
+</body>
+</html>
